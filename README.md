@@ -1,40 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mock Authentication in Storybook Example Features
 
-## Getting Started
+Next.js application with NextAuth.js authentication
+CredentialsProvider implementation using mock data from the JSONPlaceholder API
+Storybook integration with mocked authentication states to simulate logged-in and logged-out scenarios
 
-First, run the development server:
+# Testing Authentication
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Sign In:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to http://localhost:3000/auth/signin.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Use one of the sample emails from the JSONPlaceholder API:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Sincere@april.biz
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Shanna@melissa.tv
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Nathan@yesenia.net
 
-## Learn More
+Julianne.OConner@kory.org
 
-To learn more about Next.js, take a look at the following resources:
+Full list:
+https://github.com/evermeer/AlamofireJsonToObjects/blob/master/AlamofireJsonToObjectsTests/sample_users_array_json
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Password:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enter any password (password verification is not implemented in this mock setup).
