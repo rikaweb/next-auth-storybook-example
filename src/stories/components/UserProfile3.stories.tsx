@@ -1,11 +1,11 @@
 // components/UserProfile.stories.tsx
 import UserProfile from "@/components/UserProfile";
 import { Meta, StoryFn } from "@storybook/react";
-
+import { within, waitFor, expect } from "@storybook/test";
 import { SessionProvider } from "next-auth/react";
 
 export default {
-  title: "Components/UserProfile-decorative",
+  title: "Components/UserProfile-decorative-play",
   component: UserProfile,
   decorators: [
     (Story, context) => (
@@ -37,4 +37,28 @@ LoggedOut.args = {
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
   session: loggedInSession,
+};
+export const PlayLoggedIn = Template.bind({});
+
+PlayLoggedIn.args = {
+  session: loggedInSession,
+};
+
+PlayLoggedIn.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  // Test logged-in state
+  await waitFor(() => {
+    expect(canvas.getByText("Sign Out")).toBeInTheDocument();
+  });
+};
+export const PlayLoggout = Template.bind({});
+PlayLoggout.args = {
+  session: loggedOutSession,
+};
+PlayLoggout.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  await waitFor(() => {
+    expect(canvas.getByText("You are not logged in.")).toBeInTheDocument();
+  });
 };

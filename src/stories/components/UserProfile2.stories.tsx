@@ -2,18 +2,9 @@
 import UserProfile from "@/components/UserProfile";
 import { Meta, StoryFn } from "@storybook/react";
 
-import { SessionProvider } from "next-auth/react";
-
 export default {
-  title: "Components/UserProfile-decorative",
+  title: "Components/UserProfile",
   component: UserProfile,
-  decorators: [
-    (Story, context) => (
-      <SessionProvider session={context.args.session}>
-        <Story />
-      </SessionProvider>
-    ),
-  ],
 } as Meta;
 
 const Template: StoryFn = (args) => <UserProfile {...args} />;
