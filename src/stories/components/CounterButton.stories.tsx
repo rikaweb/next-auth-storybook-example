@@ -48,5 +48,5 @@ ClickedThrice.play = async ({ canvasElement }) => {
   await userEvent.click(button);
 
   // Assert the button text
-  await expect(button).toHaveTextContent("Clicked 2 times");
+  await expect(button).toHaveTextContent("Clicked 3 times");
 };

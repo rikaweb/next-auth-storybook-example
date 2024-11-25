@@ -66,41 +66,90 @@ export default function RegisterForm({ onSubmit }: RegisterFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md w- mx-auto p-8 bg-white rounded-lg shadow-md"
+    >
+      <div className="mb-6">
+        <label
+          htmlFor="name"
+          className="block mb-2 text-sm font-medium text-gray-700"
+        >
+          Name:
+        </label>
         <input
           id="name"
           data-testid="name-input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className={`w-full  px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors
+            ${
+              errors.name
+                ? "border-red-500 bg-red-50 focus:ring-red-500"
+                : "border-gray-300"
+            }`}
         />
-        {errors.name && <span className="error">{errors.name}</span>}
+        {errors.name && (
+          <p className="mt-2 text-sm text-red-600">{errors.name}</p>
+        )}
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
+
+      <div className="mb-6">
+        <label
+          htmlFor="email"
+          className="block mb-2 text-sm font-medium text-gray-700"
+        >
+          Email:
+        </label>
         <input
           id="email"
           data-testid="email-input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors
+            ${
+              errors.email
+                ? "border-red-500 bg-red-50 focus:ring-red-500"
+                : "border-gray-300"
+            }`}
         />
-        {errors.email && <span className="error">{errors.email}</span>}
+        {errors.email && (
+          <p className="mt-2 text-sm text-red-600">{errors.email}</p>
+        )}
       </div>
-      <div>
-        <label htmlFor="password">Password:</label>
+
+      <div className="mb-6">
+        <label
+          htmlFor="password"
+          className="block mb-2 text-sm font-medium text-gray-700"
+        >
+          Password:
+        </label>
         <input
           id="password"
           data-testid="password-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors
+            ${
+              errors.password
+                ? "border-red-500 bg-red-50 focus:ring-red-500"
+                : "border-gray-300"
+            }`}
         />
-        {errors.password && <span className="error">{errors.password}</span>}
+        {errors.password && (
+          <p className="mt-2 text-sm text-red-600">{errors.password}</p>
+        )}
       </div>
-      <button type="submit" data-testid="submit-button">
+
+      <button
+        type="submit"
+        data-testid="submit-button"
+        className="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+      >
         Register
       </button>
     </form>

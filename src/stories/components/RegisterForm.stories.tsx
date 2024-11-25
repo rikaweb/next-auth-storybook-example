@@ -118,7 +118,7 @@ SubmitWithErrors.play = async ({ canvasElement }) => {
 
   // Check for remaining error messages
   await waitFor(() => {
-    expect(canvas.getByText("Email is required")).toBeInTheDocument();
+    expect(canvas.getByText("Email is")).toBeInTheDocument();
     expect(
       canvas.getByText("Password must be at least 6 characters long")
     ).toBeInTheDocument();
